@@ -10,31 +10,35 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
         <ng-content select="h1"></ng-content>
 
-        <label>
+        <md-input-container>
           <input
+            mdInput
             type="email"
-            placeholder="Email address"
-            formControlName="email">
-        </label>
-        <label>
+            formControlName="email"
+            placeholder="Email address">
+          <md-error *ngIf="emailFormat">
+            Please enter a valid email address
+          </md-error>
+        </md-input-container>
+
+        <md-input-container>
           <input
+            mdInput
             type="password"
-            placeholder="Email password"
-            formControlName="password">
-        </label>
-
-        <div class="error" *ngIf="emailFormat">
-          Invalid email format
-        </div>
-
-        <div class="error" *ngIf="passwordInvalid">
-          Password is required
-        </div>
+            formControlName="password"
+            minlength="4"
+            placeholder="Password">
+          <md-error *ngIf="passwordInvalid">
+            Password is required
+          </md-error>
+        </md-input-container>
 
         <ng-content select=".error"></ng-content>
 
         <div class="auth-form__action">
-          <ng-content select="button"></ng-content>
+          <button md-raised-button color="primary" [disabled]="form.invalid">
+            <ng-content select=".action"></ng-content>
+          </button>
         </div>
 
         <div class="auth-form__toggle">

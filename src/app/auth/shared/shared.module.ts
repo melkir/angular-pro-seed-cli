@@ -5,11 +5,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AuthFormComponent } from './components';
 import { AuthService } from './services';
 import { AuthGuard } from './guards';
+import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MaterialModule
   ],
   declarations: [
     AuthFormComponent
@@ -26,6 +28,6 @@ export class SharedModule {
         AuthService,
         AuthGuard
       ]
-    }
+    };
   }
 }

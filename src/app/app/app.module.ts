@@ -12,6 +12,7 @@ import { HealthModule } from '../health/health.module';
 // components
 import { AppHeaderComponent, AppNavComponent } from './components';
 import { Store } from '../store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // routes
 export const ROUTES: Routes = [
@@ -21,6 +22,7 @@ export const ROUTES: Routes = [
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     AuthModule,
     HealthModule

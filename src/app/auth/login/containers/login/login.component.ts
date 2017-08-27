@@ -11,7 +11,7 @@ import { AuthService } from '../../../shared/services';
       <auth-form (submitted)="loginUser($event)">
         <h1>Login</h1>
         <a routerLink="/auth/register">Not registered?</a>
-        <button>Login</button>
+        <span class="action">Login</span>
         <div class="error" *ngIf="error">
           {{ error }}
         </div>
